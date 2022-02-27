@@ -1,16 +1,9 @@
 # nasa_picture_of_the_day
 
-A new Flutter project.
+### A flutter project to practice Clean architecture and TDD. 
 
-## Getting Started
+It uses NASA's API to retrieve the APOD (Astronomy Picture of the Day).
 
-This project is a starting point for a Flutter application.
+Based on [Leticia Baleiro](https://github.com/LeBaleiro/) clean architecture and tdd video series, her repository can be found in [here](https://github.com/LeBaleiro/nasa_clean_arch_null_safety)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
