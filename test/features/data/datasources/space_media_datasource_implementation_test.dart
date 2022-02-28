@@ -6,6 +6,7 @@ import 'package:nasa_picture_of_the_day/features/data/datasources/space_media_da
 import 'package:nasa_picture_of_the_day/features/data/datasources/nasa_datasource_implementation.dart';
 import 'package:nasa_picture_of_the_day/features/data/models/space_media_model.dart';
 
+import '../../../mocks/date_mock.dart';
 import '../../../mocks/space_media_mock.dart';
 
 class HttpClientMock extends Mock implements HttpClient {
@@ -21,7 +22,6 @@ void main() {
     datasource = NasaDatasourceImplementation(httpClient);
   });
 
-  final mockedDateTime = DateTime(2021, 02, 04);
   const expectedUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-02-04';
 
   void successMock() {
@@ -31,7 +31,7 @@ void main() {
   test('Should call get method with correct url', () async {
     successMock();
 
-    await datasource.getSpaceMediaByDate(mockedDateTime);
+    await datasource.getSpaceMediaByDate(mockedDate);
 
     verify(() => httpClient.get(expectedUrl)).called(1);
   });
@@ -45,7 +45,7 @@ void main() {
       url: 'https://apod.nasa.gov/apod/image/2202/PerseveranceSol354Nav1_1br2_KenKremer1024.jpg'
     );
 
-    final result =  await datasource.getSpaceMediaByDate(mockedDateTime);
+    final result =  await datasource.getSpaceMediaByDate(mockedDate);
 
     expect(result, expectedSpaceMediaModel);
   });
@@ -57,7 +57,7 @@ void main() {
         statusCode: 400,
       ));
 
-    final result = datasource.getSpaceMediaByDate(mockedDateTime);
+    final result = datasource.getSpaceMediaByDate(mockedDate);
 
     expect(() => result, throwsA(ServerException()));
   });
