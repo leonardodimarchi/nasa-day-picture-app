@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:nasa_picture_of_the_day/core/errors/exceptions.dart';
 import 'package:nasa_picture_of_the_day/core/http_client/http_client.dart';
+import 'package:nasa_picture_of_the_day/core/utils/converters/date_to_string_converter.dart';
 import 'package:nasa_picture_of_the_day/features/data/datasources/space_media_datasource.dart';
 import 'package:nasa_picture_of_the_day/features/data/datasources/nasa_datasource_implementation.dart';
 import 'package:nasa_picture_of_the_day/features/data/models/space_media_model.dart';
@@ -16,10 +17,12 @@ class HttpClientMock extends Mock implements HttpClient {
 void main() {
   late SpaceMediaDatasource datasource;
   late HttpClient httpClient;
+  late DateToStringConverter converter;
 
   setUp(() {
     httpClient = HttpClientMock();
-    datasource = NasaDatasourceImplementation(httpClient);
+    converter = DateToStringConverter();
+    datasource = NasaDatasourceImplementation(httpClient: httpClient, converter: converter);
   });
 
   const expectedUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2021-02-04';

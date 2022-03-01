@@ -7,7 +7,6 @@ import 'package:nasa_picture_of_the_day/features/domain/usecases/get_space_media
 import 'package:nasa_picture_of_the_day/features/presenter/controllers/home_store.dart';
 import 'package:nasa_picture_of_the_day/features/presenter/pages/home_page.dart';
 import 'package:nasa_picture_of_the_day/features/presenter/pages/picture_page.dart';
-import 'package:http/http.dart' as http;
 
 class AppModule extends Module {
   @override
