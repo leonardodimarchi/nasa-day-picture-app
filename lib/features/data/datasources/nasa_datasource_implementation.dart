@@ -9,9 +9,13 @@ import 'package:nasa_picture_of_the_day/features/data/datasources/space_media_da
 import 'package:nasa_picture_of_the_day/features/data/models/space_media_model.dart';
 
 class NasaDatasourceImplementation implements SpaceMediaDatasource {
+  final DateToStringConverter converter;
   final HttpClient httpClient;
 
-  NasaDatasourceImplementation(this.httpClient);
+  NasaDatasourceImplementation({
+    required this.converter,
+    required this.httpClient,
+  });
 
   @override
   Future<SpaceMediaModel> getSpaceMediaByDate(DateTime date) async {

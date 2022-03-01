@@ -23,7 +23,7 @@ void main() {
 
   
   test('Should return space media for a given date from the repository', () async {
-    when(() => repository.getSpaceMediaByDate(mockedDate)).thenAnswer((_) async => const Right<Failure, SpaceMediaEntity>(mockSpaceMediaEntity));
+    when(() => repository.getSpaceMediaByDate(any())).thenAnswer((_) async => const Right<Failure, SpaceMediaEntity>(mockSpaceMediaEntity));
 
     final result = await usecase(mockedDate);
 
@@ -32,12 +32,19 @@ void main() {
   });
 
   test('Should return a failure when the repository call is unsuccessful', () async {
-    when(() => repository.getSpaceMediaByDate(mockedDate))
+    when(() => repository.getSpaceMediaByDate(any()))
     .thenAnswer((_) async => Left<Failure, SpaceMediaEntity>(ServerFailure()));
 
     final result = await usecase(mockedDate);
 
     expect(result, Left(ServerFailure()));
     verify(() => repository.getSpaceMediaByDate(mockedDate)).called(1);
+  });
+
+  test('Should return NullParam failure when date is Null', () async {
+    final result = await usecase(null);
+
+    expect(result, Left(NullParamFailure()));
+    verifyNever(() => repository.getSpaceMediaByDate(mockedDate));
   });
 }

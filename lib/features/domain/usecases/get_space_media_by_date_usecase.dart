@@ -10,7 +10,7 @@ class GetSpaceMediaByDateUseCase implements UseCase<SpaceMediaEntity, DateTime> 
   GetSpaceMediaByDateUseCase(this.repository);
 
   @override
-  Future<Either<Failure, SpaceMediaEntity>> call(DateTime date) async {
-    return await repository.getSpaceMediaByDate(date);
+  Future<Either<Failure, SpaceMediaEntity>> call(DateTime? date) async {
+    return date != null ? await repository.getSpaceMediaByDate(date) : Left(NullParamFailure());
   }
 }

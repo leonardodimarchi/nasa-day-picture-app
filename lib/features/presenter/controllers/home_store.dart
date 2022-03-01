@@ -13,7 +13,7 @@ class HomeStore extends NotifierStore<Failure, SpaceMediaEntity> {
     url: '',
   ));
 
-  getSpaceMediaByDate(DateTime date) async {
+  getSpaceMediaByDate(DateTime? date) async {
     setLoading(true);
 
     final spaceMedia = await usecase(date);
