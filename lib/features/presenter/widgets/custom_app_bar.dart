@@ -5,17 +5,20 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final Size preferredSize;
 
   final String title;
+  final Color backgroundColor;
 
-  CustomAppBar({Key? key, required this.title}) : preferredSize = const Size.fromHeight(50.0), super(key: key);
+  CustomAppBar({
+    Key? key, 
+    required this.title, 
+    required this.backgroundColor
+  }) : preferredSize = const Size.fromHeight(50.0), super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      title: Text(
-        title,
-      ),
-      backgroundColor: const Color(0xFF233C5C),
+      title: Text(title),
+      backgroundColor: backgroundColor,
     );
   }
 }

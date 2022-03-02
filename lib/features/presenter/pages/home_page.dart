@@ -15,7 +15,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'APOD'),
+      appBar: CustomAppBar(
+        title: 'Astronomy Picture of the Day', 
+        backgroundColor: Colors.blueAccent,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -23,7 +26,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 Text(
-                  "Welcome to Astronomy Picture of the Day!",
+                  "Start by choosing a day",
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.caption,
                 ),
@@ -31,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                   height: 150,
                 ),
                 RoundButton(
-                  label: "Select datetime",
+                  label: "Select a day",
                   onTap: () async {
                     var datePicked = await showDatePicker(
                       helpText: "Select a datetime",
