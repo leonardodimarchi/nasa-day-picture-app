@@ -19,7 +19,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
   @override
   void initState() {
     super.initState();
-    store.getSpaceMediaByDate(DateTime(2022, 01, 25));
+    store.getSpaceMediaByDate(DateTime.now());
   }
 
   @override
