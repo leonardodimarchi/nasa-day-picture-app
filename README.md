@@ -1,4 +1,4 @@
-# nasa_picture_of_the_day
+# Nasa picture of the day
 
 ### A flutter project to practice Clean architecture and TDD. 
 
