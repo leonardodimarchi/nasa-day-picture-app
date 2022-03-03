@@ -12,6 +12,8 @@ Based on [Leticia Baleiro](https://github.com/LeBaleiro/) clean architecture and
 
 ### License
 
+[MIT License](LICENSE.md)
+
 
 
 
