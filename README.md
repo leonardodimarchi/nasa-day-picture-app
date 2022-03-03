@@ -2,8 +2,18 @@
 
 ### A flutter project to practice Clean architecture and TDD. 
 
+<hr>
+
+<div align="center">
+  <img src=".github/app_preview.png">
+</div>
+
 It uses NASA's API to retrieve the APOD (Astronomy Picture of the Day).
 
 Based on [Leticia Baleiro](https://github.com/LeBaleiro/) clean architecture and tdd video series, her repository can be found in [here](https://github.com/LeBaleiro/nasa_clean_arch_null_safety)
+
+### License
+
+
 
 
