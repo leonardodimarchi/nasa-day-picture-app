@@ -2,11 +2,9 @@
 
 ### A flutter project to practice Clean architecture and TDD. 
 
-<hr>
+<img src=".github/app_preview.png">
 
-<div align="center">
-  <img src=".github/app_preview.png">
-</div>
+<hr>
 
 It uses NASA's API to retrieve the APOD (Astronomy Picture of the Day).
 
