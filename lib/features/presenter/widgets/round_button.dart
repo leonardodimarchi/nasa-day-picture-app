@@ -14,6 +14,7 @@ class RoundButton extends StatelessWidget {
     return GestureDetector(
       child: Container(
         width: 220,
+        margin: const EdgeInsets.only(top: 30),
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
@@ -22,7 +23,9 @@ class RoundButton extends StatelessWidget {
         child: Text(
           label,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.button,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
       onTap: onTap as Function(),
